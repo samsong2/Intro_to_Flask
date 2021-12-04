@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, render_template, redirect, url_for
 
+#from src.model.SearchApp import SearchTerm
 
 # creates the flask
 app = Flask(__name__)
@@ -11,10 +12,11 @@ app = Flask(__name__)
 @app.route("/", methods=['GET, POST']) # obviously the default page.
 def index():
     # search request
+    """
     if request.method == 'POST':
         
         return render_template('results.html')
-
+    """
 
     return render_template('main.html')
 
