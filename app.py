@@ -12,7 +12,9 @@ def index():
 
     # search request
     if request.method == 'GET':
-        pass
+        
+        redirect(url_for('search'))
+
 
     return render_template('main.html')
 
