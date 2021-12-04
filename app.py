@@ -14,7 +14,7 @@ def index():
     # search request
     if request.method == 'GET':
         
-        redirect('/search')
+        return redirect('/search')
 
 
     return render_template('main.html')
