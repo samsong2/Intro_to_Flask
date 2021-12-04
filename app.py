@@ -14,14 +14,14 @@ def index():
     # search request
     if request.method == 'GET':
         
-        redirect(url_for('search'))
+        redirect(url_for('search_results'))
 
 
     return render_template('main.html')
 
 
 @app.route('/search', methods=['POST'])
-def my_form_post():
+def search_results():
     return render_template('results.html')
 
 """
