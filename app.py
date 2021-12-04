@@ -1,7 +1,6 @@
 import os
 from flask import Flask, request, render_template, redirect, url_for
 
-from src/model/SearchApp import SearchTerm
 
 # creates the flask
 app = Flask(__name__)
@@ -14,12 +13,8 @@ def index():
     # search request
     if request.method == 'POST':
         
-        #return redirect(url_for('search_results'))
-        query = request.form['query'].lower()
-        if len(query) == 0:
-            return render_template('results.html')
+        return render_template('results.html')
 
-        print('querying', query)
 
     return render_template('main.html')
 
