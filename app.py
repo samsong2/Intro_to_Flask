@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     return render_template('./src/website/main.html')
 
-@app.route('/search', methods=['POST'])
+@app.route('/', methods=['POST'])
 def my_form_post():
     query = request.form['query'].lower()
     if len(query) == 0:
