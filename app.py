@@ -8,13 +8,13 @@ app = Flask(__name__)
 # The view function index() is linked to the main route using the app.route() decorator.
 # When the main route is requested, Flask will serve the request by calling index() and using its return value as the response.
 
-@app.route("/", methods=['GET']) # obviously the default page.
+@app.route("/", methods=['GET', 'POST']) # obviously the default page.
 def index():
 
     # search request
     if request.method == 'GET':
         
-        redirect(url_for('search_results'))
+        redirect('/search')
 
 
     return render_template('main.html')
