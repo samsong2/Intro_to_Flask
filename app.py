@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask 
 
 # creates the flask
 app = Flask(__name__)
@@ -12,4 +12,4 @@ def create_app():
 
 @app.route("/") # obviously the default page.
 def index():
-    return "Hello World!"
+    return render_template('./src/website/index.html')
