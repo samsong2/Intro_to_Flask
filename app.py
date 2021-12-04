@@ -20,4 +20,5 @@ def my_form_post():
 
     #search_results = 
     #total_results = 
-    return render_template('./src/website/results.html', search_results=search_results, num_results=len(), query=query, page_no=page_no, total_results=total_results)
+    return render_template('./src/website/results.html')
+    #return render_template('./src/website/results.html', search_results=search_results, num_results=len(), query=query, page_no=page_no, total_results=total_results)
