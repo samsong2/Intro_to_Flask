@@ -85,38 +85,7 @@ def SearchTerm(searchData):
 				fld_content = hit['FieldContent']
 				score = hit.score
 
-				#print("\n\n")
-				#print(title_page,doc_num,web_address,st_time,fld_content, score, '\n')
-
-				# should ideally be saving data from hit instead of list
 				list3.append(dict(hit))
-				#list3.append(list2[doc_num])
-				#print("docnum = ",doc_num," list2 = ",list2[doc_num])
-				#if i>=10:
-					#break
-
-	#print("documentNumber = ",documentNumber," list2.size = ",len(list2))
-	#print("Search end.....\n\n")
-	#print("list3 = ",list3)
 	return list3
 
-#searchResult=SearchTerm(queryString)
-#print("Search result = ",searchResult)
-#print("size = ",len(searchResult))
-#print("output : max 10 records ,  list of list -> [  [Title-page, web-address, star-time, content], [], []   ]")
 
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/', methods=['POST'])
-def my_form_post():
-    query = request.form['query'].lower()
-    if len(query) == 0:
-        return render_template('index.html')
-
-    print('querying', query)
-
-    #search_results = 
-    #total_results = 
-    return render_template('results.html', search_results=search_results, num_results=len(), query=query, page_no=page_no, total_results=total_results)

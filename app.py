@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, render_template, redirect, url_for
 
+from src/model/SearchApp import SearchTerm
 
 # creates the flask
 app = Flask(__name__)
@@ -8,14 +9,17 @@ app = Flask(__name__)
 # The view function index() is linked to the main route using the app.route() decorator.
 # When the main route is requested, Flask will serve the request by calling index() and using its return value as the response.
 
-@app.route("/", methods=['POST']) # obviously the default page.
+@app.route("/", methods=['GET, POST']) # obviously the default page.
 def index():
     # search request
     if request.method == 'POST':
         
-        return redirect(url_for('search_results'))
+        #return redirect(url_for('search_results'))
+        query = request.form['query'].lower()
+        if len(query) == 0:
+            return render_template('results.html')
 
-
+        print('querying', query)
 
     return render_template('main.html')
 
