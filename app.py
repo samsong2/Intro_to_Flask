@@ -21,7 +21,7 @@ def index():
 
         print('querying', query)
         # query here?
-        search_results = SearchTerm(query)
+        search_results = json.dumps(SearchTerm(query))
         print(search_results)
         return render_template('results.html', search_results=search_results, num_results=len(search_results), query=query, page_no=0, total_results=len(search_results))
     
