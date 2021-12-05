@@ -1,4 +1,5 @@
 import os
+import pathlib
 #import whoosh
 from whoosh import qparser
 from whoosh.index import open_dir, create_in
@@ -41,10 +42,9 @@ def dataClean(fieldData):
 
 
 list3=[]
-dirname = "indexdir"
 
-if not os.path.exists(dirname):
-    os.mkdir(dirname)
+dirpath = os.path.dirname(os.path.abspath(__file__))
+dirname = os.path.join(dirpath, "indexdir")
 
 queryString = "compute these vectors exactly"
 
