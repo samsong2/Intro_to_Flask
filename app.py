@@ -14,8 +14,14 @@ def index():
     # search request
 
     if request.method == 'POST':
-        
-        return render_template('results.html')
+        query = request.form['query'].lower()
+
+        print('querying', query)
+        # query here?
+        search_results = SearchTerm(query)
+        print('query results')
+        return render_template('results.html', search_results=search_results, num_results=len(search_results), query=query, page_no=0, total_results=len(search_results))
+            return render_template('results.html')
     
 
     return render_template('main.html')
