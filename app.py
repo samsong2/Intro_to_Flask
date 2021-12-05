@@ -1,7 +1,5 @@
 import os
 from flask import Flask, request, render_template, redirect, url_for
-import json
-
 print(os.path)
 
 from src.model.SearchApp import SearchTerm
@@ -22,7 +20,7 @@ def index():
         print('querying', query)
         # query here?
         search_results = SearchTerm(query)
-        #search_results = json.dumps(search_results)
+
         print(search_results)
         return render_template('results.html', search_results=search_results, num_results=len(search_results), query=query, page_no=0, total_results=len(search_results))
     
