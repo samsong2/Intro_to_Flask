@@ -20,8 +20,9 @@ def index():
         print('querying', query)
         # query here?
         search_results = SearchTerm(query)
-
+        
         print(search_results)
+        # currently only works as array?
         return render_template('results.html', search_results=search_results, num_results=len(search_results), query=query, page_no=0, total_results=len(search_results))
     
 
