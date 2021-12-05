@@ -85,8 +85,8 @@ def SearchTerm(searchData):
 				fld_content = hit['FieldContent']
 				score = hit.score
 
-				#list3.append(dict(hit))
-				list3.append([web_address,title_page,fld_content])
+				list3.append(dict(hit))
+				#list3.append([web_address,title_page,fld_content])
 	return list3
 
 
